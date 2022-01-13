@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="../static/images/favicon.ico"/>
 
-    <title>${actor.name}</title>
+    <title>${movie.title}</title>
 </head>
 
 <body>
@@ -45,12 +45,12 @@
 <main id="main">
     <div class="container">
         <div class="text-center">
-            <h1>${actor.name}</h1>
-            <img src="${actor.imageUrl}" alt="actor photo" class="img-fluid">
-            <br><br>
-            <h3>Biography</h3>
-            <p>${actor.biography}</p>
+            <h1>${movie.title}</h1>
+            <img src="${movie.imageUrl}" alt="movie photo" class="img-fluid">
         </div>
+        <h4>Release year: ${movie.releaseYear}</h4>
+        <h4>Duration in minutes: ${movie.duration}</h4>
+        <h4>Description: ${movie.description}</h4>
     </div>
 </main>
 </body>

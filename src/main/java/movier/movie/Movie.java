@@ -28,7 +28,7 @@ public class Movie {
     private Short duration; //minutes
     private String description;
     private String imageUrl;
-    private String trailerUrl;
+    //private String trailerUrl;
 
     @OneToMany(mappedBy = "movie")
     private List<Genre> genres;
