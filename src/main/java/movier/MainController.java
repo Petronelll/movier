@@ -17,7 +17,7 @@ public class MainController {
         this.userService= userService;
     }
 
-    @PostMapping("/api/register")
+    @PostMapping("/register")
     String registerUser(@ModelAttribute User user) {
         return userService.registerUser(user);
     }

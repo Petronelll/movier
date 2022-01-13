@@ -16,4 +16,15 @@ public class ActorService {
     public Actor findActorByName(String name) {
         return actorRepository.findActorByName(name);
     }
+
+    public String addActor(Actor actor) {
+        String message;
+        if (actorRepository.findActorByName(actor.getName()) != null)
+            message = "Invalid actor name";
+        else {
+            actorRepository.insertActor(actor.getName(), actor.getImageUrl(), actor.getBiography());
+            message = "ok";
+        }
+        return message;
+    }
 }
