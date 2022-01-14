@@ -8,6 +8,10 @@ import movier.moviereview.MovieReview;
 import movier.watchlist.Watchlist;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -18,11 +22,18 @@ import java.util.List;
 public class User {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue
     private Integer id;
 
+    @NotEmpty
     private String username;
+
+    @Email
+    @NotEmpty
     private String email;
+
+    @NotBlank
+    //@Size(min = 6)
     private String password;
 
     @OneToOne

@@ -18,8 +18,7 @@ public interface ActorRepository extends CrudRepository<Actor, Integer> {
     @Transactional
     @Modifying
     @Query(
-            value =
-                    "INSERT INTO actor (name, image_url, biography) values (:name, :imageUrl, :biography)",
+            value = "INSERT INTO actor (name, image_url, biography) values (:name, :imageUrl, :biography)",
             nativeQuery = true)
     void insertActor(@Param("name") String name,
                      @Param("imageUrl") String imageUrl,
