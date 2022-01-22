@@ -27,5 +27,4 @@ public class Watchlist {
 
     @OneToMany(mappedBy = "watchlist")
     private List<Movie> movies;
-
 }

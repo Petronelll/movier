@@ -23,4 +23,14 @@ public interface ActorRepository extends CrudRepository<Actor, Integer> {
     void insertActor(@Param("name") String name,
                      @Param("imageUrl") String imageUrl,
                      @Param("biography") String biography);
+
+    @Transactional
+    @Modifying
+    @Query(value = "DELETE FROM actor WHERE id = ?1", nativeQuery = true)
+    void deleteActorById(Integer id);
+
+    @Transactional
+    @Modifying
+    @Query(value = "UPDATE actor SET name = ?2 WHERE id = ?1", nativeQuery = true)
+    void updateActorName(Integer id, String name);
 }

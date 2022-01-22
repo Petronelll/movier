@@ -27,4 +27,12 @@ public class ActorService {
         }
         return message;
     }
+
+    public void deleteActorById(Integer id) {
+        actorRepository.deleteActorById(id);
+    }
+
+    public void updateActorName(Integer id, String name) {
+        actorRepository.updateActorName(id, name);
+    }
 }

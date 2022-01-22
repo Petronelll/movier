@@ -27,4 +27,12 @@ public class MovieService {
         );
         return "ok";
     }
+
+    public void deleteMovieById(Integer id) {
+        movieRepository.deleteMovieById(id);
+    }
+
+    public void updateMovieTitle(Integer id, String title) {
+        movieRepository.updateMovieTitle(id, title);
+    }
 }

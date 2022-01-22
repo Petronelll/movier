@@ -27,4 +27,15 @@ public interface MovieRepository extends CrudRepository<Movie, Integer> {
                      @Param("duration") Short duration,
                      @Param("description") String description,
                      @Param("imageUrl") String imageUrl);
+
+    @Transactional
+    @Modifying
+    @Query(value = "DELETE FROM movie WHERE id = ?1", nativeQuery = true)
+    void deleteMovieById(Integer id);
+
+    @Transactional
+    @Modifying
+    @Query(value = "UPDATE movie SET title = ?2 WHERE id = ?1", nativeQuery = true)
+    void updateMovieTitle(Integer id, String title);
+
 }
