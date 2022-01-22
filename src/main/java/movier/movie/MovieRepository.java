@@ -7,12 +7,16 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public interface MovieRepository extends CrudRepository<Movie, Integer> {
 
     @Query(value = "SELECT * FROM movie WHERE id = ?1", nativeQuery = true)
-    Movie findMovieById(Integer  id);
+    Movie findMovieById(Integer id);
+
+    @Query(value = "SELECT * FROM movie", nativeQuery = true)
+    List<Movie> findAll();
 
     //TODO
     @Transactional

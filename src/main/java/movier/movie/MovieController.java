@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("movie")
 public class MovieController {
@@ -25,6 +27,13 @@ public class MovieController {
         }
         model.addAttribute(movie);
         return "movie";
+    }
+
+    @GetMapping(path = "/all", produces = "text/html")
+    public String getMovies(Model model) {
+        List<Movie> movies = movieService.findAll();
+        model.addAttribute("movies", movies);
+        return "movies";
     }
 
     @GetMapping(path = "/new", produces = "text/html")

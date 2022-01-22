@@ -3,6 +3,8 @@ package movier.movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MovieService {
 
@@ -15,6 +17,10 @@ public class MovieService {
 
     public Movie findMovieById(Integer id) {
         return movieRepository.findMovieById(id);
+    }
+
+    public List<Movie> findAll() {
+        return movieRepository.findAll();
     }
 
     public String addMovie(Movie movie) {
