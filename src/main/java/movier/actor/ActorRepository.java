@@ -11,8 +11,8 @@ import javax.transaction.Transactional;
 @Repository
 public interface ActorRepository extends CrudRepository<Actor, Integer> {
 
-    @Query(value = "SELECT * FROM actor WHERE name =  ?1", nativeQuery = true)
-    Actor findActorByName(String name);
+    @Query(value = "SELECT * FROM actor WHERE id =  ?1", nativeQuery = true)
+    Actor findActorById(Integer id);
 
     //TODO
     @Transactional

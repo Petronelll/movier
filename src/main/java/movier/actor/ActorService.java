@@ -13,13 +13,13 @@ public class ActorService {
         this.actorRepository = actorRepository;
     }
 
-    public Actor findActorByName(String name) {
-        return actorRepository.findActorByName(name);
+    public Actor findActorById(Integer id) {
+        return actorRepository.findActorById(id);
     }
 
     public String addActor(Actor actor) {
         String message;
-        if (actorRepository.findActorByName(actor.getName()) != null)
+        if (actorRepository.findActorById(actor.getId()) != null)
             message = "Invalid actor name";
         else {
             actorRepository.insertActor(actor.getName(), actor.getImageUrl(), actor.getBiography());

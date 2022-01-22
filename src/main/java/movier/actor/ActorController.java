@@ -16,9 +16,9 @@ public class ActorController {
         this.actorService = actorService;
     }
 
-    @GetMapping(path = "/{name}", produces = "text/html")
-    public String getActor(@PathVariable String name, Model model) {
-        Actor actor = actorService.findActorByName(name);
+    @GetMapping(path = "/{id}", produces = "text/html")
+    public String getActor(@PathVariable Integer id, Model model) {
+        Actor actor = actorService.findActorById(id);
         if (actor == null) {
             model.addAttribute("reason", "Actor not found");
             return "error";

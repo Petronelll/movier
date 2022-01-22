@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error</title>
-</head>
-<body>
-    <h1>${reason}</h1>
+<#import "common.ftl" as c/>
+<@c.page title="error"></@c.page>
+<main id="main">
+    <div class="container">
+        <h1>${(reason)!}</h1>
+    </div>
+</main>
 </body>
 </html>

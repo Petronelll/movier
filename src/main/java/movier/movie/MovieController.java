@@ -19,7 +19,7 @@ public class MovieController {
     @GetMapping(path = "/{id}", produces = "text/html")
     public String getMovie(@PathVariable Integer id, Model model) {
         Movie movie = movieService.findMovieById(id);
-        if (id == null) {
+        if (movie == null) {
             model.addAttribute("reason", "Movie not found");
             return "error";
         }
