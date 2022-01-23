@@ -29,8 +29,9 @@ public class Movie {
     private String description;
     private String imageUrl;
 
-    @OneToMany(mappedBy = "movie")
-    private List<Genre> genres;
+    @ManyToOne
+    @JoinColumn(name = "genre_id", referencedColumnName = "id")
+    private Genre genre;
 
     @OneToMany(mappedBy = "movie")
     private List<MovieReview> movieReviews;

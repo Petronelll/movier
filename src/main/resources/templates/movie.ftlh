@@ -8,6 +8,7 @@
         </div>
         <h4>Release year: ${movie.releaseYear}</h4>
         <h4>Duration in minutes: ${movie.duration}</h4>
+        <h4>Genre: ${movie.genre.name}</h4>
         <h4>Description: ${movie.description}</h4>
         <h4>Top Cast: </h4>
         <ul>

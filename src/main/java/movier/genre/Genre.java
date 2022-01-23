@@ -4,6 +4,7 @@ import lombok.*;
 import movier.movie.Movie;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -18,7 +19,6 @@ public class Genre {
     //@Column(nullable = false)
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name="movie_id", referencedColumnName = "id")
-    private Movie movie;
+    @OneToMany(mappedBy = "genre")
+    private List<Movie> genres;
 }
