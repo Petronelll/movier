@@ -28,7 +28,7 @@
 
                 <div class="navbar-nav">
                     <a class="nav-link" href="/">Home</a>
-                    <a class="nav-link" href="#">Movies</a>
+                    <a class="nav-link" href="/movie/all">Movies</a>
                     <a class="nav-link" href="#">Actors</a>
                     <a class="nav-link" href="#">Search</a>
                 </div>

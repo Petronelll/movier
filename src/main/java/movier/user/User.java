@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import movier.moviereview.MovieReview;
 import movier.watchlist.Watchlist;
+import movier.watchlist.WatchlistKey;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -36,10 +37,9 @@ public class User {
     //@Size(min = 6)
     private String password;
 
-    @OneToOne
-    @JoinColumn(name = "watchlist_id", referencedColumnName = "id")
-    private Watchlist watchlist;
-
     @OneToMany(mappedBy = "user")
     private List<MovieReview> movieReviews;
+
+    @OneToMany(mappedBy = "user")
+    private List<Watchlist> watchlists;
 }

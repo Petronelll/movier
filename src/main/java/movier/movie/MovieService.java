@@ -23,6 +23,10 @@ public class MovieService {
         return movieRepository.findAll();
     }
 
+    public List<Movie> findAllByUserId(Integer id) {
+        return movieRepository.findAllByUserId(id);
+    }
+
     public String addMovie(Movie movie) {
         movieRepository.insertMovie(
                 movie.getTitle(),

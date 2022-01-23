@@ -16,6 +16,10 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
+    public User findUserByUsername(String username) {
+        return userRepository.findUserByUsername(username);
+    }
+
     public String registerUser(User user) {
         String message;
         if (userRepository.findUserByUsername(user.getUsername()) != null)

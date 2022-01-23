@@ -18,13 +18,16 @@ import java.util.Set;
 @AllArgsConstructor
 public class Watchlist {
 
-    @Id
-    @GeneratedValue
-    private Integer id;
+    @EmbeddedId
+    private WatchlistKey id;
 
-    @OneToOne(mappedBy = "watchlist")
+    @ManyToOne
+    @MapsId("userId")
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 
-    @OneToMany(mappedBy = "watchlist")
-    private List<Movie> movies;
+    @ManyToOne
+    @MapsId("movieId")
+    @JoinColumn(name = "movie_id", referencedColumnName = "id")
+    private Movie movie;
 }

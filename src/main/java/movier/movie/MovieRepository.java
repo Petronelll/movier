@@ -18,6 +18,9 @@ public interface MovieRepository extends CrudRepository<Movie, Integer> {
     @Query(value = "SELECT * FROM movie", nativeQuery = true)
     List<Movie> findAll();
 
+    @Query(value = "SELECT m.* FROM movie m JOIN watchlist w on m.id = w.movie_id WHERE w.user_id = ?1", nativeQuery = true)
+    List<Movie> findAllByUserId(Integer id);
+
     //TODO
     @Transactional
     @Modifying

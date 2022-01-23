@@ -38,7 +38,6 @@ public class Movie {
     @OneToMany(mappedBy = "movie")
     private List<MovieCharacter> movieCharacters;
 
-    @ManyToOne
-    @JoinColumn(name = "watchlist_id", referencedColumnName = "id")
-    private Watchlist watchlist;
+    @OneToMany(mappedBy = "movie")
+    private List<Watchlist> watchlists;
 }
