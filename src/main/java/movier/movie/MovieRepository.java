@@ -12,8 +12,8 @@ import java.util.List;
 @Repository
 public interface MovieRepository extends CrudRepository<Movie, Integer> {
 
-    @Query(value = "SELECT * FROM movie WHERE id = ?1", nativeQuery = true)
-    Movie findMovieById(Integer id);
+    @Query(value = "SELECT * FROM movie m JOIN movie_character mc on m.id = mc.movie_id JOIN movie_review mr on m.id = mr.movie_id JOIN user u on mr.user_id = u.id WHERE m.id = ?1", nativeQuery = true)
+    Movie findAllMovieById(Integer id);
 
     @Query(value = "SELECT * FROM movie", nativeQuery = true)
     List<Movie> findAll();
@@ -44,5 +44,7 @@ public interface MovieRepository extends CrudRepository<Movie, Integer> {
     @Modifying
     @Query(value = "UPDATE movie SET title = ?2 WHERE id = ?1", nativeQuery = true)
     void updateMovieTitle(Integer id, String title);
+
+    Movie findMovieById(Integer id);
 
 }

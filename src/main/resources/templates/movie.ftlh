@@ -9,6 +9,18 @@
         <h4>Release year: ${movie.releaseYear}</h4>
         <h4>Duration in minutes: ${movie.duration}</h4>
         <h4>Description: ${movie.description}</h4>
+        <h4>Top Cast: </h4>
+        <ul>
+            <#list movie.movieCharacters as character>
+            <li>${character.actor.name} as ${character.characterName}</li>
+            </#list>
+        </ul>
+        <h4>Reviews: </h4>
+        <ul>
+            <#list movie.movieReviews as review>
+                <li>${review.user.username}. Rating: ${review.rating}. ${review.text}</li>
+            </#list>
+        </ul>
 
         <form action="/watchlist" method="POST">
             <div class="form-group">
