@@ -12,13 +12,13 @@
         <h4>Top Cast: </h4>
         <ul>
             <#list movie.movieCharacters as character>
-            <li>${character.actor.name} as ${character.characterName}</li>
+            <li><a href="/actor/${character.actor.id}">${character.actor.name}</a> as ${character.characterName}</li>
             </#list>
         </ul>
         <h4>Reviews: </h4>
         <ul>
             <#list movie.movieReviews as review>
-                <li>${review.user.username}. Rating: ${review.rating}. ${review.text}</li>
+                <li>Username: ${review.user.username}. Rating: ${review.rating}. ${review.text}</li>
             </#list>
         </ul>
 

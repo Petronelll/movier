@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("actor")
 public class ActorController {
@@ -38,5 +40,12 @@ public class ActorController {
         if (message == "ok") return "success";
         model.addAttribute("reason", message);
         return "error";
+    }
+
+    @GetMapping(path = "/all", produces = "text/html")
+    public String getAllActors(Model model) {
+        List<Actor> actors = actorService.findAll();
+        model.addAttribute("actors", actors);
+        return "actors";
     }
 }

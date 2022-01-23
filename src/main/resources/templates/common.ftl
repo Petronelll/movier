@@ -29,15 +29,15 @@
                 <div class="navbar-nav">
                     <a class="nav-link" href="/">Home</a>
                     <a class="nav-link" href="/movie/all">Movies</a>
-                    <a class="nav-link" href="#">Actors</a>
-                    <a class="nav-link" href="#">Search</a>
+                    <a class="nav-link" href="/actor/all">Actors</a>
+                    <a class="nav-link" href="/explore">Explore</a>
                 </div>
 
 
                 <div class="col align-self-end"></div>
                 <div class="navbar-nav">
-                    <a class="nav-link" href="">Watchlist</a>
-                    <a class="nav-link" href="#">Account</a>
+                    <a class="nav-link" href="/watchlist">Watchlist</a>
+                    <a class="nav-link" href="/account">Account</a>
                 </div>
             </div>
         </div>

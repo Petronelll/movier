@@ -7,12 +7,16 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public interface ActorRepository extends CrudRepository<Actor, Integer> {
 
     @Query(value = "SELECT * FROM actor WHERE id =  ?1", nativeQuery = true)
     Actor findActorById(Integer id);
+
+    @Query(value = "SELECT * FROM actor", nativeQuery = true)
+    List<Actor> findAll();
 
     //TODO
     @Transactional

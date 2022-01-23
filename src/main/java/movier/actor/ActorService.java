@@ -3,6 +3,8 @@ package movier.actor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ActorService {
 
@@ -15,6 +17,10 @@ public class ActorService {
 
     public Actor findActorById(Integer id) {
         return actorRepository.findActorById(id);
+    }
+
+    public List<Actor> findAll() {
+        return actorRepository.findAll();
     }
 
     public String addActor(Actor actor) {
