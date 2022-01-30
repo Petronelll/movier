@@ -15,9 +15,5 @@ Movie review web application
 
 ## Demo:
 
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true">
-    <source src="presentation/demo.mp4" type="video/mp4">
-  </video>
-</figure>
-<video width="320" height="240" controls src="presentation/demo.mp4"></video>
+https://user-images.githubusercontent.com/41263719/151718947-d63fd051-9138-4888-8cd2-1a40bd8b06a7.mp4
+
