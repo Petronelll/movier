@@ -27,6 +27,10 @@ public class MovieService {
         return movieRepository.findAllByUserId(id);
     }
 
+    public List<Movie> findAllByGenre(String genre) {
+        return movieRepository.findAllByGenre(genre);
+    }
+
     public String addMovie(Movie movie) {
         movieRepository.insertMovie(
                 movie.getTitle(),
@@ -38,11 +42,40 @@ public class MovieService {
         return "ok";
     }
 
+    public String addReview(Integer user_id, Integer movie_id, Integer rating, String text) {
+        movieRepository.insertReview(user_id, movie_id, rating, text);
+        return "ok";
+    }
+
     public void deleteMovieById(Integer id) {
         movieRepository.deleteMovieById(id);
     }
 
     public void updateMovieTitle(Integer id, String title) {
         movieRepository.updateMovieTitle(id, title);
+    }
+
+    public List<Movie> findMostReviewed() {
+        return movieRepository.findMostReviewed();
+    }
+
+    public List<Movie> findLongest() {
+        return movieRepository.findByMaxDuration();
+    }
+
+    public List<Movie> findHighestRated() {
+        return movieRepository.findByMaxRating();
+    }
+
+    public List<Movie> findOldestMovies() {
+        return movieRepository.findByMinReleaseYear();
+    }
+
+    public List<Movie> findInAnyWatchlist() {
+        return movieRepository.FindInAnyWatchlist();
+    }
+
+    public List<Movie> findWithoutReviews() {
+        return movieRepository.findWithoutReviews();
     }
 }

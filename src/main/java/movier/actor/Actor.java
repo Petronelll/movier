@@ -23,8 +23,6 @@ public class Actor {
     private Integer id;
 
     private String name;
-    //private String birthplace;
-    //private Date birthdate;
     private String imageUrl;
     private String biography;
 

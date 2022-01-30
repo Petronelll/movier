@@ -32,4 +32,9 @@ public class MainController {
             return "error";
         }
     }
+
+    @GetMapping(value = "/explore", produces = "text/html")
+    String explore() {
+        return "explore";
+    }
 }

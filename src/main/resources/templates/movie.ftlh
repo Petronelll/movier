@@ -31,6 +31,23 @@
                 <button type="submit" class="btn btn-primary">Add to watchlist</button>
             </div>
         </form>
+        <br>
+        <form action="/movie/newReview" method="POST">
+            <div class="form-group">
+                <input name="id" id="id" type="hidden"  class="form-control" value="${movie.id}" required>
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating</label>
+                <input name="rating" id="rating"  class="form-control" type="number" required>
+            </div>
+            <div class="form-group">
+                <label for="text">Your review</label>
+                <input name="text" id="text"  class="form-control"  required>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Add review</button>
+            </div>
+        </form>
     </div>
 </main>
 </body>

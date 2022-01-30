@@ -12,8 +12,8 @@ import java.util.List;
 @Repository
 public interface ActorRepository extends CrudRepository<Actor, Integer> {
 
-    @Query(value = "SELECT * FROM actor WHERE id =  ?1", nativeQuery = true)
-    Actor findActorById(Integer id);
+    @Query(value = "SELECT * FROM actor a JOIN movie_character mc on a.id = mc.actor_id JOIN movie m on mc.movie_id = m.id WHERE a.id =  ?1", nativeQuery = true)
+    Actor findAllById(Integer id);
 
     @Query(value = "SELECT * FROM actor", nativeQuery = true)
     List<Actor> findAll();
@@ -37,4 +37,6 @@ public interface ActorRepository extends CrudRepository<Actor, Integer> {
     @Modifying
     @Query(value = "UPDATE actor SET name = ?2 WHERE id = ?1", nativeQuery = true)
     void updateActorName(Integer id, String name);
+
+    public Actor findActorById(Integer id);
 }
